@@ -48,4 +48,39 @@ their personal profile.
    @param {string} requestee - The username of the user receiving the friend request.
    @returns {Promise<boolean>} - A promise that resolves to a string indicating the result of the opeartion.
 
+:kbd:`Send Friend Request`
+
+
+Accepting friend Requests
+-------------------------
+
+.. code::
+
+   *Accepts a friend request from one user to another.
+   @param {string} username - The username of the user accepting the friend request.
+   @param {string} requestee - The username of the user who sent the friend request.
+   @returns {Promise<string>} - A promise that resolves to a success message if the friend request is accepted, or an error message if no friend request is found
+
+:kbd:`Accept Friend Request`
+
+Retrieving a friend request for a given username
+------------------------------------------------
+
+.. code::
+
+   @param {string} username - The username for which to retrieve friend requests.
+   @returns {Promise<array<Objects>>} - A promise that resolves to an array of friend requests.
+
+   export async function getFriendRequest(username) {
+      const db = await connect;
+      const friendRequest = await db.all(
+         'SELECT * FROM FriendRequests WHERE requestee = ?', [username],
+      );
+      return friendRequests;
+      }
+
+
+Retrieving the friends of a user from the database
+--------------------------------------------------
+
 
