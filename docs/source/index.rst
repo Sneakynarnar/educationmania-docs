@@ -12,8 +12,9 @@ To log into an existing account we used the following code
 `If the user name or passowrd is incorrect then we have a promise that resolves to true, false otherwise.`
 
 .. code::
-   ``@param {String} username
-   @param {String} password
-   @returns {promise<boolean>} ``
+   code:
+    @param {String} username
+    @param {String} password
+    @returns {promise<boolean>} 
 
 
