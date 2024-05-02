@@ -13,10 +13,14 @@ To log into an existing account we used the following code
 
 .. code::
 
-   *Logs in a user with the provided username and password
-   @param {string} username - The username of the account.
-   @param {string} password - The password of the account
-   @returns {Promise<boolean>} - A promise that resolves to true if the login is successful, false otherwise
+   @param {string} username 
+   @param {string} password 
+   @returns {Promise<boolean>}
+
+Creating a simple system to where when the user enters their existing username and password the database can
+take that information and match it with the users username and password.
+
+if the username and password doesn't match then it would give a login error and for the user to try again.
 
 :kbd:`Login`
 
@@ -26,10 +30,12 @@ Registering a new account
 Next step was to create a new account / register an account
 .. code::
 
-   *Registers a new user account
-   @param {string} username - The username for the new account.
-   @param {string} password - The password for the new account
-   @returns {Promise<boolean>} - A promise that resolves to a string indicating the registration status.
+   @param {string} username 
+   @param {string} password 
+   @returns {Promise<boolean>}
+
+We create a register for a new account for the users for non existing users to create a fresh account.
+if the credentials from the username in the database seem to match, then an error of ``Username already exists`` will pop up
 
 :kbd:`Create account`
 
@@ -43,10 +49,13 @@ their personal profile.
 
 .. code::
 
-   * Sends a friend request from one user to another
-   @param {string} username - The username of the user sending the friend request.
-   @param {string} requestee - The username of the user receiving the friend request.
-   @returns {Promise<boolean>} - A promise that resolves to a string indicating the result of the opeartion.
+   @param {string} username 
+   @param {string} requestee 
+   @returns {Promise<boolean>} 
+
+The strings for username and requestee is so that we can identify the user sending the friend request and the
+user that is receiving the friend request, and then include the promise that resolves to a string indicating 
+the result of the opeartion.
 
 :kbd:`Send Friend Request`
 
@@ -56,10 +65,13 @@ Accepting friend Requests
 
 .. code::
 
-   *Accepts a friend request from one user to another.
-   @param {string} username - The username of the user accepting the friend request.
-   @param {string} requestee - The username of the user who sent the friend request.
-   @returns {Promise<string>} - A promise that resolves to a success message if the friend request is accepted, or an error message if no friend request is found
+   @param {string} username 
+   @param {string} requestee 
+   @returns {Promise<string>} 
+
+The two strings here represent the username of the user accpeting the friend request and the user who sent
+the friend request also the promise string that resolves to a success message if the friend request is accepted
+or an error message if no friend request is found. 
 
 :kbd:`Accept Friend Request`
 
@@ -68,44 +80,49 @@ Retrieving a friend request for a given username
 
 .. code::
 
-   @param {string} username - The username for which to retrieve friend requests.
-   @returns {Promise<array<Objects>>} - A promise that resolves to an array of friend requests.
+   @param {string} username 
+   @returns {Promise<array<Objects>>} 
 
-
+This code represents the username for which to recieve the friend request, so that the user that recieves a friend 
+request they see that they have recieved it from a specific person, also the promise that resolves to an array of 
+friend requests.
 
 Retrieving the friends of a user from the database
 --------------------------------------------------
 
-
-
 .. code::
    
-   @param {Object} res - The response object.
-   @param {string} username - The username of the user.
-   @returns {Array<string>} - An array of usernames representing the user's friends.
+   @param {Object} res 
+   @param {string} username 
+   @returns {Array<string>} 
 
+We have a database of all the users that have signed up to Education mania so when dealing with a friends system
+we want to be able to retrieve a user from the data base so they can send friend requests or remove them 
+from their friends list.
 
 Ignoring a Friend Request
 -------------------------
 
 .. code::
 
-   Ignores a friend request.
-   @param {Response} res - The response object.
-   @param {string} username - The username of the user receiving the friend request.
-   @param {string} requestee - The username of the user who sent the friend request.
-   @returns {Promise<string>} A promise that resolves to a success message if the friend request is ignored, or an error message if no friend request is found.
+   
+   @param {Response} res 
+   @param {string} username 
+   @param {string} requestee 
+   @returns {Promise<string>} 
 
+Ignoring a friend request, when an unwanted friend request is sent then the user that is receiving the request can
+ignore it, so the database looks at the user that is recieiving the friend request and then the username of the user 
+who sent the friend request, then we have a promise that sends a success message if the friend request has been ignored.
 
 Removing a Friend from the database
 -----------------------------------
 
 .. code::
 
-   Removes a friend from the database.
-   @param {string} username - The username of the user.
-   @param {string} friend - The username of the friend to be removed.
-   @returns {Promise<string>} A promise that resolves to a success message or an error message.
+   @param {string} username 
+   @param {string} friend 
+   @returns {Promise<string>} 
 
 
 Retrieving the Leaderboard
