@@ -87,7 +87,7 @@ Retrieving the friends of a user from the database
 
 .. code::
    
-      @param {Object} res - The response object.
+   @param {Object} res - The response object.
    @param {string} username - The username of the user.
    @returns {Array<string>} - An array of usernames representing the user's friends.
    export async function getFriends(username) {
@@ -136,7 +136,7 @@ Removing a Friend from the database
 -----------------------------------
 
 .. code::
-   
+
    Removes a friend from the database.
    @param {string} username - The username of the user.
    @param {string} friend - The username of the friend to be removed.
