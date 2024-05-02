@@ -6,7 +6,7 @@ Usage
 Installation
 ------------
 
-To use Education mania we want to first install node. once node has been installed we can run this website with the following command ``npm run dev`` wait for the command to finish, now we can run the webpage and start through Logging in / Signing up
+To use Education mania we want to first install node. once node has been installed we can run this website with the following command ``npm run start`` or ``npm start`` wait for the command to finish, now we can run the webpage and start through Logging in / Signing up
 
 
 Interacting with Education Mania
@@ -28,33 +28,4 @@ or it can be managed through the ``home page`` on the right.
 On the right hand side of the home page we see that there it shows the ``active`` users and ``offline`` users, also below that we can ``Remove/Add friends``. This is a easier approach to 
 accessing friends and seeing who is online to play with.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
-
-.. autofunction:: lumache.get_random_ingredients
-
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
-
-.. autoexception:: lumache.InvalidKindError
-
-For example:
-
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
 
