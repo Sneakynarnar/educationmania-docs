@@ -84,3 +84,79 @@ Retrieving the friends of a user from the database
 --------------------------------------------------
 
 
+
+.. code::
+ * @param {Object} res - The response object.
+ * @param {string} username - The username of the user.
+ * @returns {Array<string>} - An array of usernames representing the user's friends.
+ */
+export async function getFriends(username) {
+   const db = await connect;
+   const friendsRows = await db.all(
+    'SELECT * FROM friends WHERE user1 = ? OR user2 = ?', [username, username],
+   );
+   const friends = [];
+   for (const friend of friendsRows) {
+      if (friend.user1 === username) {
+      friends.push(friend.user2);
+   } else {
+      friends.push(friend.user1);
+   }
+}
+return friends;
+}
+
+
+Ignoring a Friend Request
+-------------------------
+
+.. code::
+/**
+ * Ignores a friend request.
+ *
+ * @param {Response} res - The response object.
+ * @param {string} username - The username of the user receiving the friend request.
+ * @param {string} requestee - The username of the user who sent the friend request.
+ * @returns {Promise<string>} A promise that resolves to a success message if the friend request is ignored, or an error message if no friend request is found.
+ */
+export async function ignoreFriendRequest(username, requestee) {
+   const db = await connect;
+   const existingFriendRequests = await db.get(
+    'SELECT * FROM FriendRequests WHERE user = ? AND requestee = ?', [username, requestee],
+   );
+   if (!existingFriendRequests) {
+      return 'No friend request from that user';
+   }
+   await db.run(
+      'DELETE FROM FriendRequests WHERE (user = ? AND requestee = ?)', [username, requestee],
+   );
+   return 'Success';
+}
+
+
+Removing a Friend from the database
+-----------------------------------
+
+.. code::
+
+   /**
+ * Removes a friend from the database.
+ * @param {string} username - The username of the user.
+ * @param {string} friend - The username of the friend to be removed.
+ * @returns {Promise<string>} A promise that resolves to a success message or an error message.
+ */
+export async function removeFriend(username, friend) {
+   const db = await connect;
+   const existingFriend = await db.get(
+    'SELECT * FROM friends WHERE (user1 = ? AND user2 = ?) OR (user1 = ? AND user2 = ?)',
+      [username, friend, friend, username],
+   );
+   if (!existingFriend) {
+      return 'No friend found';
+   }
+   await db.run(
+      'DELETE FROM friends WHERE (user1 = ? AND user2 = ?) OR (user1 = ? AND user2 = ?)',
+      [username, friend, friend, username],
+   );
+   return 'Success';
+}
