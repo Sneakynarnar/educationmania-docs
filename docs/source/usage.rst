@@ -6,8 +6,7 @@ Usage
 Installation
 ------------
 
-To use Lumache, first install it using pip:
-
+To use Education mania we want to first install node. once node has been installed we can run this website with the following command ``npm run dev`` wait for the command to finish, now we can run the webpage andf start through Logging in / Signing up
 .. code-block:: console
 
    (.venv) $ pip install lumache
