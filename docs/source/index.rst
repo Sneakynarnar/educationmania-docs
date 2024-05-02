@@ -138,14 +138,12 @@ Removing a Friend from the database
 -----------------------------------
 
 .. code::
-
-   /**
    Removes a friend from the database.
    @param {string} username - The username of the user.
    @param {string} friend - The username of the friend to be removed.
    @returns {Promise<string>} A promise that resolves to a success message or an error message.
- */
-export async function removeFriend(username, friend) {
+   
+   export async function removeFriend(username, friend) {
    const db = await connect;
    const existingFriend = await db.get(
     'SELECT * FROM friends WHERE (user1 = ? AND user2 = ?) OR (user1 = ? AND user2 = ?)',
@@ -159,4 +157,4 @@ export async function removeFriend(username, friend) {
       [username, friend, friend, username],
    );
    return 'Success';
-}
+   }
