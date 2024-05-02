@@ -124,6 +124,11 @@ Removing a Friend from the database
    @param {string} friend 
    @returns {Promise<string>} 
 
+We implemented a remove friend system so that when a user has sent a request to the wrong user or doesn't want to keep
+the user in their friends list then the user can remove them from their friends list, with a ``param {string} username`` 
+which gets the username of the user and a ``param {string} friend`` which will be the username of the friend that will be 
+removed and then a ``returns{Promise<string>}`` which sends a success or an error message depending if the user has 
+successfully removed them or not.
 
 Retrieving the Leaderboard
 --------------------------
@@ -131,6 +136,9 @@ Retrieving the Leaderboard
 
 .. code::
    
-   * we are Retrieving the leaderboard from the database
-   @returns {Promise<Array<Objects>>} - The leaderboard array containing account information
+   @returns {Promise<Array<Objects>>}
+
+Finally we have a function of where we can retrieve the leaderboard from the database, this database will look into who has how
+many points and display them to the users seeing where they are on the leaderboard
+the ``@returns {Promise<Array<Object>>}`` shows the leaderboard array containing account information.
 
