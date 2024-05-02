@@ -13,12 +13,13 @@ To log into an existing account we used the following code
 
 .. code::
 
-   @param {string} username
-   @param {string} password
-   @returns {Promise<boolean>}
+   *Logs in a user with the provided username and password
+   @param {string} username - The username of the account.
+   @param {string} password - The password of the account
+   @returns {Promise<boolean>} - A promise that resolves to true if the login is successful, false otherwise
 
 
-now we want to talk about the different factors
------------------------------------------------
+
+now where were we at
 
 
