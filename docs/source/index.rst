@@ -142,3 +142,6 @@ Finally we have a function of where we can retrieve the leaderboard from the dat
 many points and display them to the users seeing where they are on the leaderboard
 the ``@returns {Promise<Array<Object>>}`` shows the leaderboard array containing account information.
 
+
+
+Check how to install through :doc:`usage`
