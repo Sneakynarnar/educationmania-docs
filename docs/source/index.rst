@@ -86,11 +86,11 @@ Retrieving the friends of a user from the database
 
 
 .. code::
- * @param {Object} res - The response object.
- * @param {string} username - The username of the user.
- * @returns {Array<string>} - An array of usernames representing the user's friends.
- */
-export async function getFriends(username) {
+   @param {Object} res - The response object.
+   @param {string} username - The username of the user.
+   @returns {Array<string>} - An array of usernames representing the user's friends.
+   
+   export async function getFriends(username) {
    const db = await connect;
    const friendsRows = await db.all(
     'SELECT * FROM friends WHERE user1 = ? OR user2 = ?', [username, username],
@@ -101,10 +101,10 @@ export async function getFriends(username) {
       friends.push(friend.user2);
    } else {
       friends.push(friend.user1);
+      }
    }
-}
-return friends;
-}
+      return friends;
+   }
 
 
 Ignoring a Friend Request
@@ -112,7 +112,7 @@ Ignoring a Friend Request
 
 .. code::
    Ignores a friend request.
-   
+
    @param {Response} res - The response object.
    @param {string} username - The username of the user receiving the friend request.
    @param {string} requestee - The username of the user who sent the friend request.
