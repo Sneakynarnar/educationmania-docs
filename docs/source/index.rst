@@ -112,12 +112,12 @@ Ignoring a Friend Request
 
 .. code::
 /**
- * Ignores a friend request.
- *
- * @param {Response} res - The response object.
- * @param {string} username - The username of the user receiving the friend request.
- * @param {string} requestee - The username of the user who sent the friend request.
- * @returns {Promise<string>} A promise that resolves to a success message if the friend request is ignored, or an error message if no friend request is found.
+   Ignores a friend request.
+
+   @param {Response} res - The response object.
+   @param {string} username - The username of the user receiving the friend request.
+   @param {string} requestee - The username of the user who sent the friend request.
+   @returns {Promise<string>} A promise that resolves to a success message if the friend request is ignored, or an error message if no friend request is found.
  */
 export async function ignoreFriendRequest(username, requestee) {
    const db = await connect;
@@ -140,10 +140,10 @@ Removing a Friend from the database
 .. code::
 
    /**
- * Removes a friend from the database.
- * @param {string} username - The username of the user.
- * @param {string} friend - The username of the friend to be removed.
- * @returns {Promise<string>} A promise that resolves to a success message or an error message.
+   Removes a friend from the database.
+   @param {string} username - The username of the user.
+   @param {string} friend - The username of the friend to be removed.
+   @returns {Promise<string>} A promise that resolves to a success message or an error message.
  */
 export async function removeFriend(username, friend) {
    const db = await connect;
