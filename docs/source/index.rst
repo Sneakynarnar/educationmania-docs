@@ -12,9 +12,13 @@ To log into an existing account we used the following code
 `If the user name or passowrd is incorrect then we have a promise that resolves to true, false otherwise.`
 
 .. code::
-   
-   # Demonstrate a code block
-   code:
-   - example: true
+
+   @param {string} username
+   @param {string} password
+   @returns {Promise<boolean>}
+
+
+now we want to talk about the different factors
+-----------------------------------------------
 
 
