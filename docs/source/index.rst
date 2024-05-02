@@ -3,6 +3,7 @@ Welcome to Education Manias Documentation
 
 
 
+
 Creating Accounts
 -----------------
 

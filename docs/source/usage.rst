@@ -1,7 +1,7 @@
 Usage
 =====
 
-.. _installation:
+.. _usage:
 
 Installation
 ------------
@@ -10,7 +10,7 @@ To use Education mania we want to first install node. once node has been install
 
 
 Interacting with Education Mania
-----------------
+--------------------------------
 
 When loading into Education mania, we have a start up page where we can ``create an account`` or ``login`` with an existing account.
 When creating an account we want to click on the signup link which redirects you to create your account.
@@ -29,3 +29,4 @@ On the right hand side of the home page we see that there it shows the ``active`
 accessing friends and seeing who is online to play with.
 
 
+You can go back to ref :ref:`index`
