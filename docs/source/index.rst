@@ -89,7 +89,6 @@ Retrieving the friends of a user from the database
    @param {Object} res - The response object.
    @param {string} username - The username of the user.
    @returns {Array<string>} - An array of usernames representing the user's friends.
-   
    export async function getFriends(username) {
    const db = await connect;
    const friendsRows = await db.all(
@@ -112,7 +111,6 @@ Ignoring a Friend Request
 
 .. code::
    Ignores a friend request.
-
    @param {Response} res - The response object.
    @param {string} username - The username of the user receiving the friend request.
    @param {string} requestee - The username of the user who sent the friend request.
@@ -140,7 +138,6 @@ Removing a Friend from the database
    @param {string} username - The username of the user.
    @param {string} friend - The username of the friend to be removed.
    @returns {Promise<string>} A promise that resolves to a success message or an error message.
-
    export async function removeFriend(username, friend) {
    const db = await connect;
    const existingFriend = await db.get(
@@ -156,3 +153,20 @@ Removing a Friend from the database
    );
    return 'Success';
    }
+
+
+Retrieving the Leaderboard
+--------------------------
+
+
+.. code::
+   
+   * we are Retrieving the leaderboard from the database
+   @returns {Promise<Array<Objects>>} - The leaderboard array containing account information
+      export async function getLeaderboard() {
+      const db = await connect;
+      const leaderboard = await db.all(
+            'SELECT * FROM Accounts ORDER BY totalCorrectAnswers DESC'
+      );
+      return leaderboard;
+      }
