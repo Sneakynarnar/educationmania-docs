@@ -1,4 +1,4 @@
-Welcome to Education Manias Documentation
+Accounts
 =========================================
 
 
