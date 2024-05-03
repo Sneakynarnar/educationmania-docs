@@ -146,3 +146,11 @@ the ``@returns {Promise<Array<Object>>}`` shows the leaderboard array containing
 
 
 Check how to install through :doc:`usage`
+
+
+.. toctree::
+   :maxdepth: 3
+
+   api
+   usage
+   index
