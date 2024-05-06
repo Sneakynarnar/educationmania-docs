@@ -149,9 +149,11 @@ Check how to install through :doc:`usage`
 
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 7
 
    api
    usage
+   setup
    index
+   sockets
    quiz
