@@ -149,8 +149,9 @@ Check how to install through :doc:`usage`
 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
 
    api
    usage
    index
+   quiz

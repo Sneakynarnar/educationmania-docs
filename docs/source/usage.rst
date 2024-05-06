@@ -28,5 +28,3 @@ or it can be managed through the ``home page`` on the right.
 On the right hand side of the home page we see that there it shows the ``active`` users and ``offline`` users, also below that we can ``Remove/Add friends``. This is a easier approach to 
 accessing friends and seeing who is online to play with.
 
-
-You can go back to ref :ref:`index`
